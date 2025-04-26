@@ -56,7 +56,7 @@ public class AutoForcer : MonoBehaviour
     private void UpdateArrowDirection()
     {
         arrowImage.gameObject.SetActive(true);
-        float angle = Mathf.Atan2(nextForceDirection.y, nextForceDirection.x) * Mathf.Rad2Deg - 90;
+        float angle = Mathf.Atan2(nextForceDirection.y, nextForceDirection.x) * Mathf.Rad2Deg +180;
         arrowImage.rotation = Quaternion.Euler(0, 0, angle);
     }
     

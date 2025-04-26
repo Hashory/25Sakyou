@@ -5,7 +5,8 @@ public class ThornCon : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Vector2 dir;
     private bool canDestroy = false;
-    [SerializeField] private float safeTime = 1.0f; // 無敵時間
+    [SerializeField] private float safeTime = 1.5f; // 無敵時間
+    [SerializeField] private float stopTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +16,17 @@ public class ThornCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += (Vector3)dir * speed * Time.deltaTime;
+        
+        if(stopTime > 1.0f)
+        {
+            this.transform.position += (Vector3)dir * speed * Time.deltaTime;
+        }
+        else
+        {
+            this.transform.position += Vector3.zero;
+            stopTime += Time.deltaTime;
+        }
+        
     }
 
     private void EnableDestroy()

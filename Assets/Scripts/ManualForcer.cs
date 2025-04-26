@@ -20,9 +20,12 @@ public class ManualForcer : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        // 初回の方向をセット
         marginAngle = Random.Range(0, 45);
         direction = new Vector2(Mathf.Cos(marginAngle * Mathf.Deg2Rad), Mathf.Sin(marginAngle * Mathf.Deg2Rad)).normalized;
+
+        // ★ 初期の矢印向きを合わせる！
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+        arrowImage.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     void Update()
