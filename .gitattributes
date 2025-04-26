@@ -1,0 +1,4 @@
+*.cs      text diff=csharp working-tree-encoding=UTF-8 eol=crlf
+*.shader  text working-tree-encoding=UTF-8 eol=crlf
+*.cginc   text working-tree-encoding=UTF-8 eol=crlf
+*.hlsl    text working-tree-encoding=UTF-8 eol=crlf
