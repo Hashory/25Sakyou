@@ -71,4 +71,12 @@ public class AutoForcer : MonoBehaviour
     {
         rb2d.AddForce(nextForceDirection * force);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item_Bad"))
+        {
+            Debug.Log("ゲームオーバーじゃ");
+        }
+    }
 }

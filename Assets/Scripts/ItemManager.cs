@@ -42,15 +42,11 @@ public class ItemManager : MonoBehaviour
                     //リンご
                     item.GetComponent<AppleCon>().SetApple(Vector2.down);
                 }
-                else if (itemNum == 2)
+                else if (itemNum == 2 || itemNum == 3)
                 {
                     //爆弾
+                    item.GetComponent<BombCon>().SetThorn(Vector2.down);
                 }
-                else if (itemNum == 3)
-                {
-                    //爆弾リンゴ
-                }
-
             }
 
             if (num == 1)
@@ -66,13 +62,10 @@ public class ItemManager : MonoBehaviour
                     //リンご
                     item.GetComponent<AppleCon>().SetApple(Vector2.right);
                 }
-                else if (itemNum == 2)
+                else if (itemNum == 2 || itemNum == 3)
                 {
                     //爆弾
-                }
-                else if (itemNum == 3)
-                {
-                    //爆弾リンゴ
+                    item.GetComponent<BombCon>().SetThorn(Vector2.right);
                 }
 
             }
@@ -90,13 +83,10 @@ public class ItemManager : MonoBehaviour
                     //リンご
                     item.GetComponent<AppleCon>().SetApple(Vector2.left);
                 }
-                else if (itemNum == 2)
+                else if (itemNum == 2 || itemNum == 3)
                 {
                     //爆弾
-                }
-                else if (itemNum == 3)
-                {
-                    //爆弾リンゴ
+                    item.GetComponent<BombCon>().SetThorn(Vector2.left);
                 }
 
             }
@@ -114,13 +104,10 @@ public class ItemManager : MonoBehaviour
                     //リンご
                     item.GetComponent<AppleCon>().SetApple(Vector2.up);
                 }
-                else if (itemNum == 2)
+                else if (itemNum == 2 || itemNum == 3)
                 {
                     //爆弾
-                }
-                else if (itemNum == 3)
-                {
-                    //爆弾リンゴ
+                    item.GetComponent<BombCon>().SetThorn(Vector2.up);
                 }
 
             }

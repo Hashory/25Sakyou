@@ -9,11 +9,20 @@ public class AppleCon : MonoBehaviour
 
     private float angle = 0f; // 現在の回転角度
 
+    private bool canDestroy = false;
+    [SerializeField] private float safeTime = 1.0f; // 無敵時間
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Invoke(nameof(EnableDestroy), safeTime);
     }
+
+    private void EnableDestroy()
+    {
+        canDestroy = true;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -34,5 +43,15 @@ public class AppleCon : MonoBehaviour
     public void SetApple(Vector2 dir)
     {
         this.dir = dir;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!canDestroy) return; // 無敵中は無視
+
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

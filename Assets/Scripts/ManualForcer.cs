@@ -77,4 +77,13 @@ public class ManualForcer : MonoBehaviour
     {
         rb2d.AddForce(direction * force);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item_Bad"))
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("ゲームオーバーじゃ");
+        }
+    }
 }
