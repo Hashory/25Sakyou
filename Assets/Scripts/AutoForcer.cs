@@ -7,6 +7,7 @@ public class AutoForcer : MonoBehaviour
     [SerializeField] private float force = 500f; // 力の大きさ
     [SerializeField] private float forceDuration = 2f; // 力を加える時間の間隔
     [SerializeField] private Transform arrowImage;
+    [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private Sprite[] countDownSprites; // カウントダウン用のスプライト
 
@@ -102,6 +103,7 @@ public class AutoForcer : MonoBehaviour
         if (collision.CompareTag("Item_Bad"))
         {
             Debug.Log("ゲームオーバーじゃ");
+            audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
         }
     }
 }

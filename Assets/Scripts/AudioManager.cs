@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         //ここでBGMを鳴らそう
-        //PlayBGM("魔女のレベル上げ_-_8bit", true);
+        PlayBGM("25Sakyou - Title v0.0.2_101428 (mp3cut.net)", true);
     }
     /// <summary>
     /// Dictionaryを初期化

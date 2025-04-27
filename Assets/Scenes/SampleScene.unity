@@ -293,8 +293,12 @@ MonoBehaviour:
   seSources:
   - {fileID: 714394143}
   - {fileID: 2043652804}
-  bgmClips: []
-  seClips: []
+  bgmClips:
+  - {fileID: 8300000, guid: 516d1a682eff9244e9cc391656d717a8, type: 3}
+  seClips:
+  - {fileID: 8300000, guid: d4689538d3c069f40b9070a12422464c, type: 3}
+  - {fileID: 8300000, guid: 9827f341bcf8ced4ab3c255e15b15c86, type: 3}
+  - {fileID: 8300000, guid: b1e8a0f306106944d8baf5c2ec8a42e1, type: 3}
 --- !u!4 &55701094
 Transform:
   m_ObjectHideFlags: 0
@@ -564,6 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1000
+  audioManager: {fileID: 55701093}
   actionKey: 115
   shortPressDuration: 0.4
   arrowImage: {fileID: 2121285192}
@@ -957,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2db29cddcb7d1448602003c6b32a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 55701093}
 --- !u!1 &386991546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2db29cddcb7d1448602003c6b32a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 55701093}
 --- !u!255 &386991549
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -1347,6 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2db29cddcb7d1448602003c6b32a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 55701093}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1000
+  audioManager: {fileID: 55701093}
   actionKey: 97
   shortPressDuration: 0.4
   arrowImage: {fileID: 588821957}
@@ -2321,6 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2db29cddcb7d1448602003c6b32a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 55701093}
 --- !u!255 &1003607845
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -2500,7 +2510,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2696,6 +2706,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cae6205f419f6c84387cb98abd5eadb9, type: 3}
   - {fileID: 21300000, guid: 887fc53b407b64b40a50ab3ba5147ea6, type: 3}
   - {fileID: 21300000, guid: b9870421f396c6c479e45dc0c1bd01a7, type: 3}
+  audioManager: {fileID: 55701093}
 --- !u!58 &1128711944
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3034,6 +3045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1000
+  audioManager: {fileID: 55701093}
   actionKey: 108
   shortPressDuration: 0.4
   arrowImage: {fileID: 1999097039}
@@ -3087,7 +3099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.72229683, g: 0.74213827, b: 0.38507167, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3853,6 +3865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1000
+  audioManager: {fileID: 55701093}
   actionKey: 107
   shortPressDuration: 0.4
   arrowImage: {fileID: 2066931915}
@@ -4575,16 +4588,6 @@ MonoBehaviour:
   force: 500
   forceDuration: 2
   arrowImage: {fileID: 301918600}
-  countDownSprites:
-  - {fileID: 21300000, guid: cc9771f17e9356046987ef06c9c9abf1, type: 3}
-  - {fileID: 21300000, guid: 5c489d0d00993a4428db67e89516264d, type: 3}
-  - {fileID: 21300000, guid: ab1f9b3d25ed75f4b95567679e815452, type: 3}
-  - {fileID: 21300000, guid: 7bb5783544d701a498af4132e36039b5, type: 3}
-  - {fileID: 21300000, guid: 33c9e379c1ca62d4fb47a812e49f9b81, type: 3}
-  - {fileID: 21300000, guid: dea66a0895d96614f824c67bd1cf12dd, type: 3}
-  - {fileID: 21300000, guid: 2a32fe8a50b238143aa3ce9a156e8a0b, type: 3}
-  - {fileID: 21300000, guid: 7385f4e1998d37146a3a7f1c2161fe0f, type: 3}
-  - {fileID: 21300000, guid: fbcd6a36d18b9c348920c02df9bd34f0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

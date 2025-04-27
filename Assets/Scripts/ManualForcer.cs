@@ -4,6 +4,7 @@ public class ManualForcer : MonoBehaviour
 {
     private Rigidbody2D rb2d; // Rigidbody2Dコンポーネントを格納する変数
     [SerializeField] private float force = 500f; // 力の大きさ
+    [SerializeField] private AudioManager audioManager;
     Vector2 direction; // 次に加える力の方向を格納する変数
     private int marginAngle;
     
@@ -97,6 +98,13 @@ public class ManualForcer : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Debug.Log("ゲームオーバーじゃ");
+            audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
+
+        }
+        if (collision.CompareTag("Item_Good"))
+        {
+            audioManager.PlaySE("25Sakyou - Ping_113834");
+
         }
     }
 }
