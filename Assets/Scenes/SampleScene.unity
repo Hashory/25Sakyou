@@ -2686,6 +2686,16 @@ MonoBehaviour:
   force: 500
   forceDuration: 2
   arrowImage: {fileID: 1550136807}
+  countDownSprites:
+  - {fileID: 21300000, guid: 98e15807086183f4a811561ce69d7bed, type: 3}
+  - {fileID: 21300000, guid: 54055f83bf2f8da4e85495cdf7cd1a77, type: 3}
+  - {fileID: 21300000, guid: 6ee103abba260f445bef8db335508d5b, type: 3}
+  - {fileID: 21300000, guid: 4a4662321120c2a459d8380f37011651, type: 3}
+  - {fileID: 21300000, guid: fddd5a1d4d1ff784d9c178bdc6a60f2a, type: 3}
+  - {fileID: 21300000, guid: ee0e7de8330e5174194ad8405d6f2ef2, type: 3}
+  - {fileID: 21300000, guid: cae6205f419f6c84387cb98abd5eadb9, type: 3}
+  - {fileID: 21300000, guid: 887fc53b407b64b40a50ab3ba5147ea6, type: 3}
+  - {fileID: 21300000, guid: b9870421f396c6c479e45dc0c1bd01a7, type: 3}
 --- !u!58 &1128711944
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4566,6 +4576,16 @@ MonoBehaviour:
   force: 500
   forceDuration: 2
   arrowImage: {fileID: 301918600}
+  countDownSprites:
+  - {fileID: 21300000, guid: cc9771f17e9356046987ef06c9c9abf1, type: 3}
+  - {fileID: 21300000, guid: 5c489d0d00993a4428db67e89516264d, type: 3}
+  - {fileID: 21300000, guid: ab1f9b3d25ed75f4b95567679e815452, type: 3}
+  - {fileID: 21300000, guid: 7bb5783544d701a498af4132e36039b5, type: 3}
+  - {fileID: 21300000, guid: 33c9e379c1ca62d4fb47a812e49f9b81, type: 3}
+  - {fileID: 21300000, guid: dea66a0895d96614f824c67bd1cf12dd, type: 3}
+  - {fileID: 21300000, guid: 2a32fe8a50b238143aa3ce9a156e8a0b, type: 3}
+  - {fileID: 21300000, guid: 7385f4e1998d37146a3a7f1c2161fe0f, type: 3}
+  - {fileID: 21300000, guid: fbcd6a36d18b9c348920c02df9bd34f0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
