@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ResultManager : MonoBehaviour
 {
     public Sprite player1_Win;
@@ -12,6 +13,17 @@ public class ResultManager : MonoBehaviour
     void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        if (panel.activeSelf == true)
+        {
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("tiitle");
+            }
+        }
     }
 
     public void Result(string name)

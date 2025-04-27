@@ -294,7 +294,7 @@ MonoBehaviour:
   - {fileID: 714394143}
   - {fileID: 2043652804}
   bgmClips:
-  - {fileID: 8300000, guid: 516d1a682eff9244e9cc391656d717a8, type: 3}
+  - {fileID: 8300000, guid: 871b00ec4a35cde4e847e3724a4af16e, type: 3}
   seClips:
   - {fileID: 8300000, guid: d4689538d3c069f40b9070a12422464c, type: 3}
   - {fileID: 8300000, guid: 9827f341bcf8ced4ab3c255e15b15c86, type: 3}
@@ -3775,13 +3775,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets:
   - target: {fileID: 1164634709}
-    playerNamePrefab: {fileID: 3027521531851110787, guid: 1a18a9d5517292d4c9a6e3f8e646f7f2, type: 3}
-  - target: {fileID: 1893998206}
-    playerNamePrefab: {fileID: 3027521531851110787, guid: 4c6b632e77d50024f9cbc157fb38724b, type: 3}
-  - target: {fileID: 271727873}
-    playerNamePrefab: {fileID: 3027521531851110787, guid: 3e1049ae6fec521439011862402beeae, type: 3}
-  - target: {fileID: 583841986}
     playerNamePrefab: {fileID: 3027521531851110787, guid: a6218a0bd62c8b645a35cda9ca5259f7, type: 3}
+  - target: {fileID: 1893998206}
+    playerNamePrefab: {fileID: 3027521531851110787, guid: 3e1049ae6fec521439011862402beeae, type: 3}
+  - target: {fileID: 271727873}
+    playerNamePrefab: {fileID: 3027521531851110787, guid: 4c6b632e77d50024f9cbc157fb38724b, type: 3}
+  - target: {fileID: 583841986}
+    playerNamePrefab: {fileID: 3027521531851110787, guid: 1a18a9d5517292d4c9a6e3f8e646f7f2, type: 3}
   offset: {x: 0.75, y: 0, z: 0}
 --- !u!4 &1751250266
 Transform:
