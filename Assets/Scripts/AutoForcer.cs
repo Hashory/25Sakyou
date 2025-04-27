@@ -3,9 +3,12 @@ using UnityEngine;
 public class AutoForcer : MonoBehaviour
 {
     private Rigidbody2D rb2d; // Rigidbody2Dコンポーネントを格納する変数
+    private SpriteRenderer spriteRenderer; // SpriteRendererコンポーネントを格納する変数
     [SerializeField] private float force = 500f; // 力の大きさ
     [SerializeField] private float forceDuration = 2f; // 力を加える時間の間隔
     [SerializeField] private Transform arrowImage;
+
+    [SerializeField] private Sprite[] countDownSprites; // カウントダウン用のスプライト
 
     private Vector2 nextForceDirection; // 次に加える力の方向を格納する変数
     private float timer = 0f; // 経過時間を追跡するタイマー
@@ -13,6 +16,8 @@ public class AutoForcer : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         // 初回の方向をセット
         RandomizeNextDirection();
         // 初期状態では矢印を非表示
@@ -30,19 +35,28 @@ public class AutoForcer : MonoBehaviour
         if (timer < Time.deltaTime) // 最初のフレーム
         {
             ApplyForce();
-            //DisableArrow(); // ←削除
+            DisableArrow();
         }
         // 1秒: 次の方向を決定
         else if (timer >= forceDuration / 2 && timer < (forceDuration / 2) + Time.deltaTime)
         {
             RandomizeNextDirection();
-            //UpdateArrowDirection(); // ←削除
+            EnableArrow();
         }
         // 2秒: 力を適用し、タイマーをリセット
         else if (timer >= forceDuration && timer < forceDuration + Time.deltaTime)
         {
             ApplyForce();
             timer = 0f; // タイマーリセット
+            DisableArrow();
+        }
+
+        // 1秒-2秒の間でカウントダウンスプライトをセット
+        if (timer >= forceDuration / 2 && timer < forceDuration && countDownSprites != null && countDownSprites.Length > 0)
+        {
+            float interval = (forceDuration / 2) / countDownSprites.Length;
+            int index = Mathf.Clamp((int)((timer - forceDuration / 2) / interval), 0, countDownSprites.Length - 1);
+            spriteRenderer.sprite = countDownSprites[index];
         }
 
         // 毎フレーム矢印を更新（常に表示）
@@ -60,7 +74,6 @@ public class AutoForcer : MonoBehaviour
     {
         if (arrowImage != null)
         {
-            arrowImage.gameObject.SetActive(true);
             float angle = Mathf.Atan2(nextForceDirection.y, nextForceDirection.x) * Mathf.Rad2Deg - 90;
             arrowImage.rotation = Quaternion.Euler(0, 0, angle);
         }
@@ -70,6 +83,12 @@ public class AutoForcer : MonoBehaviour
     private void DisableArrow()
     {
         arrowImage.gameObject.SetActive(false);
+    }
+
+    // 矢印を表示する
+    private void EnableArrow()
+    {
+        arrowImage.gameObject.SetActive(true);
     }
     
     // 力を適用
