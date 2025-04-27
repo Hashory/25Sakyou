@@ -36,9 +36,14 @@ public class ManualForcer : MonoBehaviour
         }
         
         // キーが押されている間
-        if (isKeyPressed)
+        if (Input.GetKey(actionKey))
         {
             keyPressTime += Time.deltaTime;
+            if(keyPressTime > shortPressDuration)
+            {
+                ChangeDirection();
+                keyPressTime = 0f;
+            }
         }
         
         // キーが離されたとき
@@ -46,16 +51,7 @@ public class ManualForcer : MonoBehaviour
         {
             isKeyPressed = false;
             
-            // 0.5秒未満の短押しなら方向を90度変える
-            if (keyPressTime < shortPressDuration)
-            {
-                ChangeDirection();
-            }
-            // 0.5秒以上の長押しなら力を加える
-            else
-            {
-                ApplyForce();
-            }
+            ApplyForce();
             
             keyPressTime = 0f;
         }
@@ -67,9 +63,15 @@ public class ManualForcer : MonoBehaviour
     // 方向を90度変更
     private void ChangeDirection()
     {
-        // 現在の方向から90度回転した新しい方向を計算
-        direction = new Vector2(-direction.y, direction.x);
-        // 矢印の向きを更新
+        float angle = 45 * Mathf.Deg2Rad; // ラジアンに変換
+        float cos = Mathf.Cos(angle);
+        float sin = Mathf.Sin(angle);
+
+        // 時計回りにする
+        float newX = direction.x * cos + direction.y * sin;
+        float newY = -direction.x * sin + direction.y * cos;
+
+        direction = new Vector2(newX, newY);
         UpdateArrow();
     }
 
