@@ -7,6 +7,7 @@ TagManager:
   - Item_Bad
   - Item_Good
   - Wall
+  - OutWall
   layers:
   - Default
   - TransparentFX

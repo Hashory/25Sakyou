@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,26 +17,26 @@ public class ItemManager : MonoBehaviour
     void Update()
     {
         spawnTime += Time.deltaTime;
-        if(spawnInterval < spawnTime)
+        if (spawnInterval < spawnTime)
         {
             //上下左右どこに生成されるか
-            int num = Random.Range(0,spawnList.Count);
+            int num = Random.Range(0, spawnList.Count);
             //どのアイテムが生成されるか
             int itemNum = Random.Range(0, items.Count);
             BoxCollider2D spawnRange = spawnList[num];
 
             Vector3 randomRange = RandomRange(spawnRange.bounds);
 
-            GameObject item = Instantiate(items[itemNum],randomRange, Quaternion.identity);
-            if(num == 0)
+            GameObject item = Instantiate(items[itemNum], randomRange, Quaternion.identity);
+            if (num == 0)
             {
                 //上に生成
-                if(itemNum == 0)
+                if (itemNum == 0)
                 {
                     //とげ
                     item.GetComponent<ThornCon>().SetThorn(Vector2.down);
                 }
-                else if(itemNum == 1)
+                else if (itemNum == 1)
                 {
                     //リンご
                     item.GetComponent<AppleCon>().SetApple(Vector2.down);
@@ -120,6 +119,6 @@ public class ItemManager : MonoBehaviour
         float randomX = Random.Range(bounds.min.x, bounds.max.x);
         float randomY = Random.Range(bounds.min.y, bounds.max.y);
 
-        return new Vector3(randomX, randomY,0);
+        return new Vector3(randomX, randomY, 0);
     }
 }

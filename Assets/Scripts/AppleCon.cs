@@ -49,7 +49,7 @@ public class AppleCon : MonoBehaviour
     {
         if (!canDestroy) return; // 無敵中は無視
 
-        if (collision.CompareTag("Wall"))
+        if (collision.CompareTag("OutWall"))
         {
             Destroy(this.gameObject);
         }
