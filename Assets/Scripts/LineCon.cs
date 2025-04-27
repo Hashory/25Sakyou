@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class LineCon : MonoBehaviour
 {
-    private int hp;
+    [SerializeField] private AudioManager audioManager;
+        private int hp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,12 +25,14 @@ public class LineCon : MonoBehaviour
             hp -= 1;
             Destroy(collision.gameObject);
             Debug.Log("ダメージくらった");
+            audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
         }
         if (collision.CompareTag("Item_Good"))
         {
             hp += 1;
             Destroy(collision.gameObject);
             Debug.Log("回復じゃ");
+            audioManager.PlaySE("25Sakyou - Ping_113834");
         }
     }
 }
