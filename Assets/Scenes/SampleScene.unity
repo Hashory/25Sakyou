@@ -3436,6 +3436,61 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3901701, y: 9.1}
   m_EdgeRadius: 0
+--- !u!1 &1751250264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751250266}
+  - component: {fileID: 1751250265}
+  m_Layer: 0
+  m_Name: PlayerNameView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1751250265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751250264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336d91731c6010842aa8cb8456e97a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNamePrefab: {fileID: 3027521531851110787, guid: 1a18a9d5517292d4c9a6e3f8e646f7f2, type: 3}
+  targets:
+  - target: {fileID: 1164634709}
+    keyName: A
+  - target: {fileID: 1893998206}
+    keyName: B
+  - target: {fileID: 271727873}
+    keyName: C
+  - target: {fileID: 583841986}
+    keyName: D
+  offset: {x: 0.75, y: 0, z: 0}
+--- !u!4 &1751250266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751250264}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76029086, y: -0.62898034, z: -0.066639334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875328454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4528,3 +4583,4 @@ SceneRoots:
   - {fileID: 2043652805}
   - {fileID: 1085900980}
   - {fileID: 262980752}
+  - {fileID: 1751250266}
