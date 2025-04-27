@@ -4,7 +4,9 @@ using UnityEngine;
 public class LineCon : MonoBehaviour
 {
     [SerializeField] private AudioManager audioManager;
-        private int hp;
+    public ResultManager resultManager;
+    public string namea;
+    private int hp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +18,7 @@ public class LineCon : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("LineのHPがない。ゲームオーバーじゃ");
+            resultManager.Result(namea);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

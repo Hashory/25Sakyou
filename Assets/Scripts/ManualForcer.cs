@@ -17,6 +17,8 @@ public class ManualForcer : MonoBehaviour
     [SerializeField] private float shortPressDuration = 0.5f; // 短押し判定時間（秒）
 
     [SerializeField] private Transform arrowImage;
+    public ResultManager resultManager;
+    public string namea;
 
     void Start()
     {
@@ -99,6 +101,7 @@ public class ManualForcer : MonoBehaviour
             Destroy(collision.gameObject);
             Debug.Log("ゲームオーバーじゃ");
             audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
+            resultManager.Result(namea);
 
         }
         if (collision.CompareTag("Item_Good"))

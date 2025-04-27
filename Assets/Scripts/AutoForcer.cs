@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using UnityEngine;
 
 public class AutoForcer : MonoBehaviour
@@ -13,7 +14,8 @@ public class AutoForcer : MonoBehaviour
 
     private Vector2 nextForceDirection; // 次に加える力の方向を格納する変数
     private float timer = 0f; // 経過時間を追跡するタイマー
-
+    public ResultManager resultManager;
+    public string namea;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -104,6 +106,7 @@ public class AutoForcer : MonoBehaviour
         {
             Debug.Log("ゲームオーバーじゃ");
             audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
+            resultManager.Result(namea);
         }
     }
 }
