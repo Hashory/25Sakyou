@@ -24,19 +24,19 @@ public class AutoForcer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        
+
         // forceDuration が 2 の場合のタイミング
         // 0秒: 力を適用し、矢印を非表示
         if (timer < Time.deltaTime) // 最初のフレーム
         {
             ApplyForce();
-            DisableArrow();
+            //DisableArrow(); // ←削除
         }
-        // 1秒: 次の方向を決定し、矢印を表示・更新
+        // 1秒: 次の方向を決定
         else if (timer >= forceDuration / 2 && timer < (forceDuration / 2) + Time.deltaTime)
         {
             RandomizeNextDirection();
-            UpdateArrowDirection();
+            //UpdateArrowDirection(); // ←削除
         }
         // 2秒: 力を適用し、タイマーをリセット
         else if (timer >= forceDuration && timer < forceDuration + Time.deltaTime)
@@ -44,6 +44,9 @@ public class AutoForcer : MonoBehaviour
             ApplyForce();
             timer = 0f; // タイマーリセット
         }
+
+        // 毎フレーム矢印を更新（常に表示）
+        UpdateArrowDirection();
     }
     
     // 次の方向をランダムに設定
@@ -52,12 +55,15 @@ public class AutoForcer : MonoBehaviour
         nextForceDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
     
-    // 矢印の向きを更新（矢印を表示する）
+    // 矢印の向きを更新（矢印を常に表示し、グローバル座標で回転）
     private void UpdateArrowDirection()
     {
-        arrowImage.gameObject.SetActive(true);
-        float angle = Mathf.Atan2(nextForceDirection.y, nextForceDirection.x) * Mathf.Rad2Deg +180;
-        arrowImage.rotation = Quaternion.Euler(0, 0, angle);
+        if (arrowImage != null)
+        {
+            arrowImage.gameObject.SetActive(true);
+            float angle = Mathf.Atan2(nextForceDirection.y, nextForceDirection.x) * Mathf.Rad2Deg - 90;
+            arrowImage.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
     
     // 矢印を非表示にする

@@ -16,16 +16,14 @@ public class ManualForcer : MonoBehaviour
     [SerializeField] private float shortPressDuration = 0.5f; // 短押し判定時間（秒）
 
     [SerializeField] private Transform arrowImage;
-    
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         marginAngle = Random.Range(0, 45);
         direction = new Vector2(Mathf.Cos(marginAngle * Mathf.Deg2Rad), Mathf.Sin(marginAngle * Mathf.Deg2Rad)).normalized;
 
-        // ★ 初期の矢印向きを合わせる！
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
-        arrowImage.rotation = Quaternion.Euler(0, 0, angle);
+        UpdateArrow();
     }
 
     void Update()
@@ -61,18 +59,28 @@ public class ManualForcer : MonoBehaviour
             
             keyPressTime = 0f;
         }
+
+        // 毎フレーム矢印を更新
+        UpdateArrow();
     }
 
     // 方向を90度変更
     private void ChangeDirection()
     {
-
         // 現在の方向から90度回転した新しい方向を計算
         direction = new Vector2(-direction.y, direction.x);
+        // 矢印の向きを更新
+        UpdateArrow();
+    }
 
-        // 矢印の向きを更新（矢印を表示する）
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
-        arrowImage.rotation = Quaternion.Euler(0, 0, angle);
+    // 矢印の向きをdirectionに合わせてグローバル回転で更新
+    private void UpdateArrow()
+    {
+        if (arrowImage != null)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+            arrowImage.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     // 力を適用
