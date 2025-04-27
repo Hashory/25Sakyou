@@ -3475,16 +3475,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336d91731c6010842aa8cb8456e97a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNamePrefab: {fileID: 3027521531851110787, guid: 1a18a9d5517292d4c9a6e3f8e646f7f2, type: 3}
   targets:
   - target: {fileID: 1164634709}
-    keyName: A
+    playerNamePrefab: {fileID: 3027521531851110787, guid: 1a18a9d5517292d4c9a6e3f8e646f7f2, type: 3}
   - target: {fileID: 1893998206}
-    keyName: B
+    playerNamePrefab: {fileID: 3027521531851110787, guid: 4c6b632e77d50024f9cbc157fb38724b, type: 3}
   - target: {fileID: 271727873}
-    keyName: C
+    playerNamePrefab: {fileID: 3027521531851110787, guid: 3e1049ae6fec521439011862402beeae, type: 3}
   - target: {fileID: 583841986}
-    keyName: D
+    playerNamePrefab: {fileID: 3027521531851110787, guid: a6218a0bd62c8b645a35cda9ca5259f7, type: 3}
   offset: {x: 0.75, y: 0, z: 0}
 --- !u!4 &1751250266
 Transform:
