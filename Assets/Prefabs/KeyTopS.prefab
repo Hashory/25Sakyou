@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc36522d7f601fe42829dbc6ac5eb947, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54fc8b6930925ad49a48bb700d8f6f65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3258305236238352998}
   m_Layer: 0
-  m_Name: KeyTop
+  m_Name: KeyTopS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
