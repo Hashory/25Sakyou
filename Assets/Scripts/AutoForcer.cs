@@ -105,7 +105,7 @@ public class AutoForcer : MonoBehaviour
         if (collision.CompareTag("Item_Bad"))
         {
             Debug.Log("ゲームオーバーじゃ");
-            audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
+            audioManager.PlaySE("SE_Bad");
             resultManager.Result(namea);
         }
     }

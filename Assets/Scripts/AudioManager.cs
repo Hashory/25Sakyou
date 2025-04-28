@@ -19,15 +19,6 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // シーンを跨いでも残す
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
 
         // Dictionaryの初期化
         InitializeDictionaries();
@@ -35,7 +26,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         //ここでBGMを鳴らそう
-        PlayBGM("25Sakyou - Title v0.0.2_101428 (mp3cut.net)", true);
+        PlayBGM("BGM_Main", true);
     }
     /// <summary>
     /// Dictionaryを初期化

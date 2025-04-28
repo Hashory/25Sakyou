@@ -28,14 +28,14 @@ public class LineCon : MonoBehaviour
             hp -= 1;
             Destroy(collision.gameObject);
             Debug.Log("ダメージくらった");
-            audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
+            audioManager.PlaySE("SE_Bad");
         }
         if (collision.CompareTag("Item_Good"))
         {
             hp += 1;
             Destroy(collision.gameObject);
             Debug.Log("回復じゃ");
-            audioManager.PlaySE("25Sakyou - Ping_113834");
+            audioManager.PlaySE("SE_GOOD");
         }
     }
 }

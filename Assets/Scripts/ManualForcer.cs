@@ -100,13 +100,13 @@ public class ManualForcer : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Debug.Log("ゲームオーバーじゃ");
-            audioManager.PlaySE("25Sakyou - Bomb 0.0.0_103939");
+            audioManager.PlaySE("SE_Bad");
             resultManager.Result(namea);
 
         }
         if (collision.CompareTag("Item_Good"))
         {
-            audioManager.PlaySE("25Sakyou - Ping_113834");
+            audioManager.PlaySE("SE_GOOD");
 
         }
     }

@@ -294,11 +294,10 @@ MonoBehaviour:
   - {fileID: 714394143}
   - {fileID: 2043652804}
   bgmClips:
-  - {fileID: 8300000, guid: 871b00ec4a35cde4e847e3724a4af16e, type: 3}
+  - {fileID: 8300000, guid: b5486c18036e27e45b5c54c1fc905f6c, type: 3}
   seClips:
-  - {fileID: 8300000, guid: d4689538d3c069f40b9070a12422464c, type: 3}
-  - {fileID: 8300000, guid: 9827f341bcf8ced4ab3c255e15b15c86, type: 3}
   - {fileID: 8300000, guid: b1e8a0f306106944d8baf5c2ec8a42e1, type: 3}
+  - {fileID: 8300000, guid: 537f5edf90b4d6d47b36f3d576c96176, type: 3}
 --- !u!4 &55701094
 Transform:
   m_ObjectHideFlags: 0
